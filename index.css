@@ -49,6 +49,10 @@ html,body,section{
      right: 0;
      background: rgba(0,0,0,0.4);
  }
+.pageMusic{
+    font-family: inherit;
+
+}
 main{
     padding-top: 12vh;
     height: calc(100% - 24vh);   /*100 vh=100% vh*/
@@ -84,6 +88,9 @@ main .aside .iconfont{
 main .aside .iconfont:hover{
     color: #fff;
 }
+main .aside .iconfont.active{
+    color: #ff5722;
+}
 main .detail{
     margin-left: 56vh;
     color: #fff;
@@ -106,7 +113,7 @@ main .icons li{
     flex: 1;
 }
 main .icons .iconfont{
-    font-size: 2vh;
+    font-size: 3vh;
     margin-right: 1vh;
 }
 main .area-bar{
@@ -120,6 +127,7 @@ main .area-bar .bar{
     height: .8vh;
     border-radius: .2vh;
     background: rgba(255,255,255,0.4);
+    cursor: pointer;
 }
 main .area-bar .currentTime{
     width: 3vh;
@@ -132,7 +140,7 @@ main .area-bar .bar-progress{
     width: 10%;
     background-color: #fff;
     border-radius: .2vh;
-    transition: width .8s;
+    transition: width .9s;   /*使进度条比较圆润的变化*/
 }
 main .author{
     font-size: 3vh;
@@ -208,6 +216,9 @@ footer:hover .iconfont {
 footer .iconfont:hover {
     color: rgba(255, 255, 255, 0.8);
 }
+footer .iconfont.disabled{
+    color: rgba(255, 255, 255, 0.4);
+}
 footer .icon-left {
     left: -8vh;
 }
@@ -215,7 +226,10 @@ footer .icon-right {
     right: -8vh;
 }
 
-/*.boomText{*/
-    /*opacity: 0;*/
-    /*display: inline-block;*/
-/*}*/
+.boomText{
+    opacity: 0;
+    display: inline-block;
+}
+.boomText.animated{
+    opacity: 1;
+}
