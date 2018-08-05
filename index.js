@@ -87,7 +87,7 @@ var Footer = {
 
     render: function(){
         var _this = this
-        $.getJSON('http://jirenguapi.applinzi.com/fm/getChannels.php')
+        $.getJSON('https://jirenguapi.applinzi.com/fm/getChannels.php')
             .done(function(ret){
                 console.log(ret)
                 _this.renderFooter(ret.channels)
@@ -102,9 +102,9 @@ var Footer = {
         channels.unshift({
             channel_id: 0,
             name: '我的最爱',
-            cover_small: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-small',
-            cover_middle: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-middle',
-            cover_big: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-big',
+            cover_small: 'https://cloud.hunger-valley.com/17-10-24/1906806.jpg-small',
+            cover_middle: 'https://cloud.hunger-valley.com/17-10-24/1906806.jpg-middle',
+            cover_big: 'https://cloud.hunger-valley.com/17-10-24/1906806.jpg-big',
         })
         channels.forEach(function (channel) {
             html += '<li data-channel-id=' + channel.channel_id + ' data-channel-name=' + channel.name + '>'
@@ -203,11 +203,11 @@ var Fm = {
             var $btn = $(this)
             if($btn.hasClass('active')){
                 $btn.removeClass('active')
-                delete _this.collections[this.currentSong.sid]
+                delete _this.collections[_this.currentSong.sid]
             }else{
                 $(this).addClass('active')
-                console.log(_this.collections[this.currentSong.sid])
-                _this.collections[this.currentSong.sid] = _this.currentSong
+                console.log(_this.collections[_this.currentSong.sid])
+                _this.collections[_this.currentSong.sid] = _this.currentSong
             }
             _this.saveToLocal()
         })
